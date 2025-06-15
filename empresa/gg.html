@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAMESBROS_HN</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .glow-btn {
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #f87171;
+    }
+
+    .glow-btn:hover {
+      background-color: #dc2626;
+      box-shadow: 0 0 20px #f87171, 0 0 30px #f87171;
+    }
+
+    .game-card {
+      border: 2px solid transparent;
+      transition: border 0.4s, box-shadow 0.4s;
+    }
+
+    .game-card:hover {
+      border: 2px solid #f87171;
+      box-shadow: 0 0 15px #f87171;
+    }
+
+    .social-box i {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+
+    .social-box i:hover {
+      transform: scale(1.2);
+      color: #f87171;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #f87171;
+      border-top: 1px solid #f87171;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <header class="bg-red-600 p-4 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo GAMESBROS_HN" class="h-12 w-12 rounded" />
+        <h1 class="text-2xl font-bold tracking-wide">GAMESBROS_HN</h1>
+      </div>
+      <input type="text" placeholder="Buscar juegos..." class="p-2 rounded bg-gray-800 text-white" id="searchInput">
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-6">
+    <h2 class="text-xl font-semibold mb-4 text-center">🎮 Juegos Disponibles 🎮</h2>
+    <div id="gamesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Juegos insertados por JavaScript -->
+    </div>
+
+    <section class="mt-12 bg-gray-800 rounded-lg p-6 shadow-lg">
+      <h2 class="text-lg font-semibold mb-4 text-center">🌐 ¡Síguenos en nuestras redes sociales! 🌐</h2>
+      <div class="flex justify-center gap-6 social-box text-white">
+        <a href="http://tiktok.com/@gamesbros_hn" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://whatsapp.com/channel/0029VbASc6N9Bb5qOcHVLF0J" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/gamesbros_hn?igsh=aHVkYm04NDB5cmM0" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    GAMESBROS 2025 - Empresa de estudiantes del 21 de Octubre 2025
+  </footer>
+
+  <script>
+    const juegos = [
+      {
+        titulo: "Grand Theft Auto V",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/271590/header.jpg",
+        descripcion: "Acción, mundo abierto. Incluye modo historia y online.",
+        link: "https://gofile.io/d/5vJjhE"
+      },
+      {
+        titulo: "FIFA 14",
+        imagen: "C:\\Users\\PC\\Desktop\\maxresdefault.jpg",
+        descripcion: "Fútbol realista con plantillas actualizadas.",
+        link: "https://www.mediafire.com/file/5nyivraww76om8d/FIFA+14+Opti+V2.1.7z/file"
+      },
+      {
+        titulo: "Minecraft Java Edition",
+        imagen: "C:\\Users\\PC\\Desktop\\Minecraft-creeper-face.jpg",
+        descripcion: "Creatividad, supervivencia y multijugador.",
+        link: "https://www.mediafire.com/file/7dh9yiuc0eh729q"
+      },
+      {
+        titulo: "Resident Evil 4 Remake",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/2050650/header.jpg",
+        descripcion: "Terror y acción con gráficos modernos.",
+        link: "https://www.mediafire.com/file/bfqbiidln4ff9iq"
+      },
+      {
+        titulo: "R.E.P.O.",
+        imagen: "https://cdn.akamai.steamstatic.com/steam/apps/3241660/header.jpg",
+        descripcion: "Juego cooperativo de terror con una atmósfera única.",
+        link: "https://www.mediafire.com/file/ejemplo_repo"
+      },
+      {
+        titulo: "Call of Duty: Modern Warfare II",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/1938090/header.jpg",
+        descripcion: "Shooter en primera persona con multijugador competitivo.",
+        link: "https://www.mediafire.com/file/ejemplo5"
+      },
+      {
+        titulo: "Need for Speed Heat",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/1222680/header.jpg",
+        descripcion: "Carreras callejeras con mucha adrenalina.",
+        link: "https://gofile.io/d/T5h6DX"
+      },
+      {
+        titulo: "Fortnite",
+        imagen: "C:\\Users\\PC\\Desktop\\empresa\\FNECO_KeyArt_25_EGS_Launcher_KeyArt_Blade_2560x1440_2560x1440-8d4d2a17f716d09b73db1782346618ce.jpg",
+        descripcion: "Batalla real con construcción y combate.",
+        link: "https://gofile.io/d/DOJfAB"
+      },
+      {
+        titulo: "God of War",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/1593500/header.jpg",
+        descripcion: "Aventura mitológica con Kratos y su hijo.",
+        link: "https://gofile.io/d/TT3Vej"
+      },
+      {
+        titulo: "Red Dead Redemption 2",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/header.jpg",
+        descripcion: "Acción y aventura en el salvaje oeste.",
+        link: "https://gofile.io/d/5GYOmi"
+      },
+      {
+        titulo: "Cyberpunk 2077",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg",
+        descripcion: "Futuro distópico en mundo abierto.",
+        link: "https://gofile.io/d/2x3fiN"
+      },
+      {
+        titulo: "Among Us",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg",
+        descripcion: "Juego de deducción social en el espacio.",
+        link: "https://www.mediafire.com/file/xbc8s3840ubro7n"
+      },
+      {
+        titulo: "The Witcher 3: Wild Hunt",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/header.jpg",
+        descripcion: "RPG de fantasía con una historia épica.",
+        link: "https://www.mediafire.com/file/qyo2wq89qkswy9q/Assassins+Creed+Brotherhood+Opti.7z/file"
+      },
+      {
+        titulo: "ARK: Survival Evolved",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/346110/header.jpg",
+        descripcion: "Sobrevive entre dinosaurios en un mundo hostil.",
+        link: "https://www.mediafire.com/file/uwr12ebqjui2119/ARK+Survival+Evolved+Opti.7z/file"
+      },
+      {
+        titulo: "Left 4 Dead 2",
+        imagen: "https://cdn.cloudflare.steamstatic.com/steam/apps/550/header.jpg",
+        descripcion: "Shooter cooperativo de supervivencia contra zombis.",
+        link: "https://www.mediafire.com/file/2mjvbdz0illke17"
+      }
+    ];
+
+    const gamesGrid = document.getElementById("gamesGrid");
+
+    juegos.forEach(juego => {
+      const card = document.createElement("div");
+      card.className = "game-card bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-300";
+      card.innerHTML = `
+        <img src="${juego.imagen}" alt="${juego.titulo}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-bold mb-2">${juego.titulo}</h3>
+          <p class="text-sm mb-3">${juego.descripcion}</p>
+          <a href="${juego.link}" target="_blank" class="glow-btn inline-block bg-red-600 text-white px-3 py-1 rounded">Descargar</a>
+        </div>`;
+      gamesGrid.appendChild(card);
+    });
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const filtro = this.value.toLowerCase();
+      document.querySelectorAll("#gamesGrid > div").forEach((card, i) => {
+        const titulo = juegos[i].titulo.toLowerCase();
+        card.style.display = titulo.includes(filtro) ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
